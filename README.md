@@ -19,11 +19,15 @@ Go programming language installed on your system
 
 ### Clone the repository:
 
-``` git clone https://github.com/TomasMen/go-edof.git  ```
+``` 
+git clone https://github.com/TomasMen/go-edof.git
+```
 
 ### Change to the project directory:
 
-``` cd go-edof ```
+``` 
+cd go-edof
+```
 
 ## Usage
 
@@ -33,14 +37,17 @@ Go programming language installed on your system
 
 ### Using go run:
 
-``` go run main.go stack.txt ```
+``` 
+go run main.go stack.txt
+```
 
 ### Building and running the executable:
+```
+go build main.go
+./main stack.txt
+```
 
-        go build main.go
-        ./main stack.txt
-
-    The program will process the images and generate an EDOF image named edof.pgm in the same directory.
+4. The program will process the images and generate an EDOF image named edof.pgm in the same directory.
 
 ## Examples
 
@@ -55,7 +62,9 @@ image3.pgm
 
 2. Place the corresponding PGM images (image1.pgm, image2.pgm, image3.pgm) in the same directory or in the ./stack/ subdirectory.
 3. Run the program:
-``` go run main.go stack.txt ```
+``` 
+go run main.go stack.txt
+```
 
 4. The program will generate an EDOF image named edof.pgm.
 
