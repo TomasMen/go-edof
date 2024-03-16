@@ -1,76 +1,72 @@
-# Go-PGM File Reader
+# Go-Extended Depth of Field
 
-This Go package provides functionality to read Portable Gray Map (PGM) image files in the P5 (raw) format.
-It is not a complete package and it was intended to explore how images are read byte by byte, and also the pgm format.
+This Go program takes a stack of PGM images with different focuses and creates an extended depth of field (EDOF) image by combining all the sharp details from each image in the stack.
+## Features
 
-## What it does (Features):
+Combines multiple PGM images with different focus points into a single EDOF image
+Automatically detects and uses the sharpest regions from each image in the stack
+Simple command-line interface for easy usage
 
-- Reads PGM files with the .pgm extension
-- Supports P5 (raw) format PGM images
-- Reads the image dimensions (width and height)
-- Reads the maximum pixel value (up to 255)
-- Stores the pixel intensities in a 2D slice of uint8 values
+## Limitations
 
-## What it doesn't do (Limitations):
+Currently, this program does not align the images, and thus objects are assumed to be aligned across all images in the stack.
 
-- This package currently only supports reading P5 (raw) format PGM images
-- The maximum pixel value is limited to 255 (uint8 values)
+## Prerequisites
+
+Go programming language installed on your system
 
 ## Installation
 
-To use this package in your Go project, you can install it using the following command:
+### Clone the repository:
 
-go get github.com/TomasMen/go-pgm
+``` git clone https://github.com/TomasMen/go-edof.git  ```
 
-Here's an example of how to use the gopgm package to read a PGM image file:
+### Change to the project directory:
 
-```go
+``` cd go-edof ```
 
-package main
+## Usage
 
-import (
-    "fmt"
-    "github.com/yourusername/gopgm"
-)
+1. Create a file named stack.txt in the project directory and list the names of the PGM images you want to stack, one per line.
+2. Place the PGM images either in the same directory as the main.go file or in a ./stack/ subdirectory.
+3. Run the program using one of the following methods:
 
-func main() {
-    filePath := "path/to/your/image.pgm"
-    image, err := gopgm.ReadPGM(filePath)
-    if err != nil {
-        fmt.Println("Error:", err)
-        return
-    }
+### Using go run:
 
-    fmt.Println("Image width:", image.Width)
-    fmt.Println("Image height:", image.Height)
-    fmt.Println("Maximum pixel value:", image.MaxVal)
+``` go run main.go stack.txt ```
 
-    // Access pixel intensities
-    for y := 0; y < image.Height; y++ {
-        for x := 0; x < image.Width; x++ {
-            pixelValue := image.Pixels[y][x]
-            fmt.Printf("Pixel (%d, %d): %d\n", x, y, pixelValue)
-        }
-    }
-}
+### Building and running the executable:
+
+        go build main.go
+        ./main stack.txt
+
+    The program will process the images and generate an EDOF image named edof.pgm in the same directory.
+
+## Examples
+
+Here's an example of how to use the program:
+
+1. Create stack.txt with the following content:
+```
+image1.pgm
+image2.pgm
+image3.pgm
 ```
 
-## Error Handling
+2. Place the corresponding PGM images (image1.pgm, image2.pgm, image3.pgm) in the same directory or in the ./stack/ subdirectory.
+3. Run the program:
+``` go run main.go stack.txt ```
 
-The ReadPGM function returns an error if any of the following conditions are met:
-
-- Invalid file name (file extension must be .pgm)
-- File type is not P5 (raw) format
-- Invalid magic number in the PGM header
-- Width or height values are not valid ASCII numbers
-- Maximum pixel value is not a valid ASCII number or exceeds 255
-- End of file is reached before all pixel intensities are read
+4. The program will generate an EDOF image named edof.pgm.
 
 ## Contributing
 
 Contributions to this package are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
+License
 
-##License
+This package is licensed under the MIT License. See the LICENSE file for more information.
 
-This package is licensed under the MIT License.
+## Acknowledgments
+
+- This Go program is a reimplementation of a Python script I created for a computer vision module assignment at my university. The reimplementation process served as an opportunity to deepen my understanding of Go and explore its potential for computer vision tasks.
 
