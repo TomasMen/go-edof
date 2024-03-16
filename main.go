@@ -129,8 +129,8 @@ func main() {
 
     maxLaplacianPyramid := createMaxLaplacianPyramid(laplacianPyramidStack)
 
-    fmt.Printf("Mean image dimensions: %dx%d\n", meanImage.Width, meanImage.Height)
-    fmt.Printf("maxLaplacianPyramid height: %d\n", len(maxLaplacianPyramid))
+    // fmt.Printf("Mean image dimensions: %dx%d\n", meanImage.Width, meanImage.Height)
+    // fmt.Printf("maxLaplacianPyramid height: %d\n", len(maxLaplacianPyramid))
     // fmt.Printf("Base pyramid height: %d\n", len(pyramidStack[0]))
     // fmt.Printf("Biggest image in base pyramid dimensions: %dx%d\n", pyramidStack[0][3].Width, pyramidStack[0][3].Height)
     // fmt.Printf("Maximum divisons: %d\n", maxDivisions)
