@@ -47,26 +47,36 @@ go build main.go
 ./main stack.txt
 ```
 
-4. The program will process the images and generate an EDOF image named edof.pgm in the same directory.
+The program will process the images and generate an EDOF image named result.pgm in the same directory.
 
 ## Examples
 
-Here's an example of how to use the program:
+Here's an example of the program's input and output:
 
-1. Create stack.txt with the following content:
-```
-image1.pgm
-image2.pgm
-image3.pgm
-```
+<div style="display:flex;">
+  <img src="./examples/example1/wasp1.pgm" alt="Input Image 1" width="30%">
+  <img src="./examples/example1/wasp2.pgm" alt="Input Image 2" width="30%">
+  <img src="./examples/example1/wasp3.pgm" alt="Input Image 3" width="30%">
+</div>
 
-2. Place the corresponding PGM images (image1.pgm, image2.pgm, image3.pgm) in the same directory or in the ./stack/ subdirectory.
+<div style="text-align:center;">
+  <img src="./examples/example1/result.pgm" alt="EDOF Result" width="90%">
+</div>
+
+To reproduce this example:
+
+1. Create `stack.txt` with the following content:
+```
+wasp1.pgm
+wasp2.pgm
+wasp3.pgm
+```
+2. Place the corresponding PGM images (`wasp1.pgm`, `wasp2.pgm`, `wasp3.pgm`) (which can be found in the `./examples/example1/` directory) in the ./stack/ directory or in the base directory.
 3. Run the program:
-``` 
+```
 go run main.go stack.txt
 ```
-
-4. The program will generate an EDOF image named edof.pgm.
+4. The program will generate an EDOF image named `edof.pgm` in the same directory.
 
 ## Contributing
 
