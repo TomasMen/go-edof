@@ -78,6 +78,8 @@ go run main.go stack.txt
 ```
 4. The program will generate an EDOF image named `edof.pgm` in the same directory.
 
+More examples can be found under the ./examples/ directory.
+
 ## Contributing
 
 Contributions to this package are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
