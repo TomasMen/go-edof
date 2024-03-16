@@ -54,13 +54,13 @@ The program will process the images and generate an EDOF image named result.pgm 
 Here's an example of the program's input and output:
 
 <div style="display:flex;">
-  <img src="./examples/example1/wasp1.pgm" alt="Input Image 1" width="30%">
-  <img src="./examples/example1/wasp2.pgm" alt="Input Image 2" width="30%">
-  <img src="./examples/example1/wasp3.pgm" alt="Input Image 3" width="30%">
+  <img src="./examples/example1/wasp1.png" alt="Input Image 1" width="30%">
+  <img src="./examples/example1/wasp2.png" alt="Input Image 2" width="30%">
+  <img src="./examples/example1/wasp3.png" alt="Input Image 3" width="30%">
 </div>
 
 <div style="text-align:center;">
-  <img src="./examples/example1/result.pgm" alt="EDOF Result" width="90%">
+  <img src="./examples/example1/result.png" alt="EDOF Result" width="90%">
 </div>
 
 To reproduce this example:
